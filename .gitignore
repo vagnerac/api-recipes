@@ -143,3 +143,4 @@ src/artifacts/
 
 # Media folder
 public/assets/media/
+/src/api/assets/images/

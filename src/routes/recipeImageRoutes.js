@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { gameController } from '../controllers/gameController.js';
+import { recipeImageController } from '../controllers/recipeImageController.js';
 
 const router = new Router();
 
 // Create
-router.post('/', gameController);
+router.post('/', recipeImageController);
 // Find all
 // router.get('/', );
 // // Update
