@@ -1,12 +1,13 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+// ChatGPT API configuration data
 export const configCompletionAIAPI = {
   completionAIApiKey: process.env.AI_COMPLETION_API_KEY,
   completionAIApiURL:
     process.env.AI_COMPLETION_HOST ??
     'https://api.openai.com/v1/chat/completions',
-  maxTokens: 50,
+  maxTokens: 600,
   temperature: 0.7,
   completionAIApiModel: 'gpt-3.5-turbo',
   messages: 'history',
@@ -14,6 +15,7 @@ export const configCompletionAIAPI = {
   completionAIApiAuthorization: `Bearer ${process.env.AI_COMPLETION_API_KEY}`,
 };
 
+//DALL-E API configuration data
 const dalleAiApiUrl =
   process.env.DALLE_HOST ?? 'https://api.openai.com/v1/images/generations';
 
@@ -28,6 +30,7 @@ export const configDalleApi = {
   },
 };
 
+// Stability.ai API configuration data
 const stabilityApiHost =
   process.env.STABILITY_API_HOST ?? 'https://api.stability.ai';
 const stabilityApiModel = 'stable-diffusion-v1-5';

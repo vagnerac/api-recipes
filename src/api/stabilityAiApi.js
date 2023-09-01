@@ -3,6 +3,7 @@ import Axios from 'axios';
 import { configStabilityApi } from './config/config.js';
 import { processFilePath } from './config/stabilityAiFilesPath.js';
 
+// call Stable Difusion AI API
 export async function getStabilityImage(recipeName) {
   const aiAPIConfigData = {
     engineID: configStabilityApi.stabilityApiModel,
@@ -28,7 +29,7 @@ export async function getStabilityImage(recipeName) {
   if (!configStabilityApi.stabilityApiKey)
     throw new Error('Missing AI API key.');
 
-  return Axios.post(
+  return await Axios.post(
     configStabilityApi.stabilityApiProcessUrl,
     aiAPIConfigData.body,
     aiAPIConfigData.headers,
@@ -47,8 +48,6 @@ export async function getStabilityImage(recipeName) {
         status: responseStatus,
       };
 
-      // const responseData = JSON.stringify(responseJSON);
-      // const responseObject = JSON.parse(responseData);
       return responseObject;
     })
     .catch(function (error) {
@@ -73,10 +72,10 @@ export async function getStabilityImage(recipeName) {
     });
 }
 
+// function to write file returned in base64 format from API in the defined location
 async function writeAIFile(responseJSON) {
   responseJSON.artifacts.forEach(async (image) => {
     const filePath = processFilePath('png').locationPath;
-    console.log('filepath=>', filePath);
     fs.writeFileSync(filePath, Buffer.from(image.base64, 'base64'));
   });
 }

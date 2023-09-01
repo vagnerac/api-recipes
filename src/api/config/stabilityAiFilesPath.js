@@ -1,3 +1,4 @@
+// below logic receive the file data to set the location and full file name and return it in the output
 export function processFilePath(fileExtension, fileName) {
   if (!fileExtension) return console.error('file extension not provided.');
 
@@ -19,12 +20,14 @@ export function processFilePath(fileExtension, fileName) {
   return filePathData;
 }
 
+//generate file name based on the current date and time
 function generateFileName() {
   const dateTimeNow = Date.now();
   const fileName = `${dateTimeNow}`;
   return fileName;
 }
 
+// function to join file name and extension
 function setFullFileName(fileName, fileExtension) {
   if (!fileExtension.includes('.')) fileExtension = `.${fileExtension}`;
 
