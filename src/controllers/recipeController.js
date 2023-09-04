@@ -5,6 +5,7 @@ export async function recipeController(req, res) {
   try {
     const userInputMessage = req.body.userInputMessage;
 
+    // It is just a rule to do not accept input greater than 20 characters
     if (userInputMessage.length > 20)
       return res.json({ recipe: 'Ingredient informed is not valid.' });
 
@@ -17,5 +18,5 @@ export async function recipeController(req, res) {
   }
 }
 export async function get(req, res) {
-  console.log('game get');
+  console.log('recipe get');
 }

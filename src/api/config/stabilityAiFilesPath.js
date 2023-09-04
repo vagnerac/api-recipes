@@ -1,4 +1,4 @@
-// below logic receive the file data to set the location and full file name and return it in the output
+// below logic receive the file name data to set the location and full file name and return it in the output
 export function processFilePath(fileExtension, fileName) {
   if (!fileExtension) return console.error('file extension not provided.');
 

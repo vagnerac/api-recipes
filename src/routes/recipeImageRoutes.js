@@ -4,7 +4,7 @@ import { recipeImageController } from '../controllers/recipeImageController.js';
 const router = new Router();
 
 // Create
-router.post('/', recipeImageController);
+router.post('/getImage', recipeImageController);
 // Find all
 // router.get('/', );
 // // Update

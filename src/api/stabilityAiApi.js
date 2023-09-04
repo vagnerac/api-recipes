@@ -42,6 +42,8 @@ export async function getStabilityImage(recipeName) {
       const responseStatus =
         responseJSON.artifacts[0].finishReason === 'SUCCESS' ? 200 : 0;
 
+      // image format is a parameter returned in the response of this app API.
+      // It helps to identify if the file is Base64 or URL
       const responseObject = {
         imageFormat: 'base64',
         imageData: responseJSON.artifacts[0].base64,

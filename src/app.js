@@ -8,6 +8,7 @@ import homeRoutes from './routes/homeRoutes.js';
 import recipeRoutes from './routes/recipeRoutes.js';
 import recipeImageRoutes from './routes/recipeImageRoutes.js';
 
+// define whitelist to CORS
 export const PORT = process.env.PORT;
 const whiteList = [`http://localhost:${PORT}`];
 

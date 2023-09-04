@@ -1,6 +1,7 @@
 import { getDalleImage } from '../api/dalleAiApi.js';
 import { getStabilityImage } from '../api/stabilityAiApi.js';
 
+// AI to generate image can be called standalone through its own Route
 // handle input and output data to generate image from AI API
 export async function recipeImageController(req, res) {
   try {

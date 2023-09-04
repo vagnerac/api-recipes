@@ -19,6 +19,8 @@ export async function getDalleImage(recipe) {
       },
     );
 
+    // image format is a parameter returned in the response of this app API.
+    // It helps to identify if the file is Base64 or URL
     const image = {
       imageFormat: 'URL',
       imageData: response.data.data[0].url,

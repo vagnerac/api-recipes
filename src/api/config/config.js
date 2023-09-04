@@ -1,6 +1,8 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+// config file to all APIs can be called by this application
+
 // ChatGPT API configuration data
 export const configCompletionAIAPI = {
   completionAIApiKey: process.env.AI_COMPLETION_API_KEY,
@@ -33,7 +35,7 @@ export const configDalleApi = {
 // Stability.ai API configuration data
 const stabilityApiHost =
   process.env.STABILITY_API_HOST ?? 'https://api.stability.ai';
-const stabilityApiModel = 'stable-diffusion-v1-5';
+const stabilityApiModel = 'stable-diffusion-512-v2-1';
 
 export const configStabilityApi = {
   stabilityApiModel: stabilityApiModel,
